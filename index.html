@@ -7,18 +7,46 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  
+
+
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+  
+    <nav>
+      <ul>
+        <li>{{#link-to "index"}}Home{{/link-to}}</li>
+        <li>{{#link-to "about"}}About{{/link-to}}
+          <ul>
+            <li>{{#link-to "about.team"}}Team{{/link-to}}</li>
+          </ul>
+        </li>
+        <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
+      </ul>
+    </nav>  
 
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" id="index">
+    <h2>Welcome to Ember.js</h2>
     <ul>
     {{#each item in model}}
       <li>{{item}}</li>
     {{/each}}
     </ul>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <h2>About page</h2>
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="contact">
+    <h2>Contact page</h2>
+  </script>
+
+  <script type="text/x-handlebars" id="about/team">
+    <h3>Our team</h3>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>

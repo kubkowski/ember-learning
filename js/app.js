@@ -24,6 +24,10 @@ bookmark.addObserver("url", function(){});
 
 App.Router.map(function() {
   // put your routes here
+  this.resource("about", function(){
+  	this.route("team");
+  });
+  this.route("contact");
 });
 
 App.IndexRoute = Ember.Route.extend({
