@@ -28,6 +28,8 @@ App.Router.map(function() {
   	this.route("team");
   });
   this.route("contact");
+  this.resource("bookmarks");
+  this.resource("bookmark", {path: '/bookmarks/:bookmark_id'});
 });
 
 App.IndexRoute = Ember.Route.extend({

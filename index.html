@@ -21,6 +21,7 @@
           </ul>
         </li>
         <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
+        <li>{{#link-to "bookmarks"}}Bookmarks{{/link-to}}</li>
       </ul>
     </nav>  
 
@@ -49,10 +50,35 @@
     <h3>Our team</h3>
   </script>
 
+  <script type="text/x-handlebars" id="bookmarks">
+    <h2>Listing bookmarks :</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Url</th>
+        </tr>
+      </thead>
+      {{#each bookmark in controller}}
+      <tr>
+        <td>{{#link-to "bookmark" bookmark}}{{bookmark.name}}{{/link-to}}</td>
+        <td>{{bookmark.url}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </script>
+
+  <script type="text/x-handlebars" id="bookmark">
+    <h1>{{name}}</h1>
+    <iframe {{bindAttr src = "url"}} ></iframe>
+  </script>
+
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
   <script src="js/libs/ember-1.7.0.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/controllers/bookmarks_controller.js"></script>
+  <script scr="js/controllers/bookmark_controller.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>
