@@ -1,12 +1,12 @@
 App.AlertView = Ember.View.extend({
 	templateName: "_alert",
-	tagName: "h3",
-	classNameBindings: [ "defaultClass", "kind"],
+	classNameBindings: [ "defaultClass", "content.kind"],
 	defaultClass: "alert-box",
 	kind: null,
-
+	controllerBinding: 'content',
 	click: function() {
-		this.$().fadeOut(300, function(){ this.remove(); });
+		var that = this;
+		this.$().fadeOut(300, function(){ that.removeFromParent(); });
 	},
 	didInsertElement: function() {
 		this.$().hide().fadeIn(300);

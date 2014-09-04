@@ -28,6 +28,7 @@ App.Router.map(function() {
   	this.route("team");
   });
   this.route("contact");
+  this.route("demotemplate");
   this.resource("bookmarks");
   this.resource("bookmark", {path: '/bookmarks/:bookmark_id'});
 });

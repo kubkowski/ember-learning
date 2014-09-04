@@ -10,6 +10,7 @@
   
 <div class="container">
 
+
   <script type="text/x-handlebars">
   
     <nav>
@@ -22,10 +23,15 @@
         </li>
         <li>{{#link-to "contact"}}Contact{{/link-to}}</li>
         <li>{{#link-to "bookmarks"}}Bookmarks{{/link-to}}</li>
+        <li>{{#link-to "demotemplate"}}Template Demonstration{{/link-to}}</li>
       </ul>
     </nav>  
-
-    {{outlet}}
+    <div class="container">
+      {{view App.FlashListView}}
+      <div class="row">
+        {{outlet}}
+      </div>
+    </div>
   </script>
 
   <script type="text/x-handlebars" id="index">
@@ -39,7 +45,7 @@
   </script>
 
   <script type="text/x-handlebars" id="_alert">
-    {{view.message}}
+    {{message}}
   </script>
 
   <script type="text/x-handlebars" id="about">
@@ -77,6 +83,24 @@
     <h1>{{name}}</h1>
     <iframe {{bindAttr src = "url"}} ></iframe>
   </script>
+
+  <script type="text/x-handlebars" id="demotemplate">
+    <h2>Template demonstration</h2>
+    {{#if booleanValue}}
+    The value is true.
+    {{else}}
+    The value is false.
+    {{/if}}
+    <ol>
+    {{#each person in list}}
+    <li>{{name}}</li>
+    {{else}}
+    There are no people here.
+    {{/each}}
+    </ol>
+  </script>
+
+
 </div>
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
@@ -84,7 +108,9 @@
   <script src="js/app.js"></script>
   <script src="js/controllers/bookmarks_controller.js"></script>
   <script src="js/controllers/bookmark_controller.js"></script>
+  <script src="js/controllers/flash.js"></script>
   <script src="js/views/alert.js"></script>
+  <script src="js/views/flash_list.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>
