@@ -92,7 +92,7 @@
 
   <script type="text/x-handlebars" id="_if">
     <p>
-      <button {{bindAttr class=":button booleanValue:success:alert"}} {{action "toggle"}}>Toggle button</button>
+      <button {{bind-attr class=":button booleanValue:success:alert"}} {{action "toggle"}}>Toggle button</button>
     </p>
     <p>
       {{#if booleanValue}}
@@ -120,13 +120,16 @@
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
   <script src="js/libs/ember-1.7.0.js"></script>
+  <script src="js/vendor/ember-data.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers/bookmarks_controller.js"></script>
   <script src="js/controllers/bookmark_controller.js"></script>
   <script src="js/controllers/flash.js"></script>
   <script src="js/controllers/demo_template.js"></script>
   <script src="js/views/alert.js"></script>
-  <script src="js/views/flash_list.js"></script>
+  <script src="js/views/flash_list.js"></script>  
+  <script src="js/models/bookmark.js"></script>
+  <script src="js/routes/bookmarks.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>

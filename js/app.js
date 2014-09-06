@@ -1,5 +1,10 @@
 App = Ember.Application.create();
 
+App.Store = DS.Store.extend({
+	revision: 14,
+	adapter: "DS.FixtureAdapter"
+});
+
 var globalCounter = 0;
 var Bookmark = Ember.Object.extend({
 	to_link: function(){
